@@ -22,6 +22,16 @@ function hoursWorkedOnDate(date){
     let outDate = this.timeOutEvents.find(event => event.date === date);
     return (outDate.hour - inDate.hour) / 100;
 }
+function wagesEarnedOnDate(date){
+    return this.payPerHour * hoursWorkedOnDate.call(this, date);
+}
+function findEmployeeByFirstName(arr, name){
+    return arr.find(employee => employee.firstName === name);
+}
+function calculatePayroll(employees){
+    return employees.reduce((acc, curr) => acc + allWagesFor.call(curr),0);
+}
+
 
 /*
  We're giving you this function. Take a look at it, you might see some usage
