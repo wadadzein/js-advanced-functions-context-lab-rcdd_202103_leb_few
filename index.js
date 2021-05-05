@@ -7,7 +7,10 @@ function createEmployeeRecords(arrs){
     return arrs.map(arr => createEmployeeRecord(arr));
 }
 
-
+function createTimeInEvent(date){
+    this.timeInEvents.push({ type: "TimeIn", hour: parseInt(date.slice(-4)), date: date.slice(0,-5) });
+    return this;
+}
 /*
  We're giving you this function. Take a look at it, you might see some usage
  that's new and different. That's because we're avoiding a well-known, but
